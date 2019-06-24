@@ -146,7 +146,7 @@ public class Rest {
 	}
 
     
-@PostMapping("post")
+@PostMapping("plan/post")
 public String add(@RequestBody Plan plan) {
 	try {
 		planView.saveAndFlush(plan);
@@ -160,7 +160,7 @@ public String add(@RequestBody Plan plan) {
 }
 
 
-@GetMapping("delete/{id}")
+@GetMapping("plans/delete/{id}")
 public String delete(@PathVariable Long id)
 {try {
 	planView.deleteById(id);
@@ -229,7 +229,7 @@ public Optional<Category> getOnecat(@PathVariable Long id ){
 
 	//authentication
 
-@PostMapping("post")
+@PostMapping("loginin")
 public User authentication(@RequestBody User user) {
 
 	User us =userview.authent(user.getEmail(), user.getPassword());
@@ -238,6 +238,21 @@ public User authentication(@RequestBody User user) {
 	}
 	else 
 		return us;	
+}
+
+
+public String crypt(String text ) {
+   try {
+        java.security.MessageDigest md = java.security.MessageDigest.getInstance("MD5");
+        byte[] array = md.digest(text.getBytes());
+        StringBuffer sb = new StringBuffer();
+        for (int i = 0; i < array.length; ++i) {
+          sb.append(Integer.toHexString((array[i] & 0xFF) | 0x100).substring(1,3));
+       }
+        return sb.toString();
+    } catch (java.security.NoSuchAlgorithmException e) {
+    }
+    return null;
 }
 
 	//user api 

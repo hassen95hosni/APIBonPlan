@@ -26,7 +26,7 @@ public class NotificationMqtt {
 	String publisherId = UUID.randomUUID().toString();
 	IMqttClient publisher;
 	
-	
+/*	
 	@Scheduled(fixedRate = 10000)
 		public void ma() throws MqttException {
 		publisher = new MqttClient("tcp://localhost:1883/notification",publisherId);
@@ -38,6 +38,7 @@ public class NotificationMqtt {
 		MqttMessage msg = new MqttMessage("hi".getBytes());
 		msg.setQos(0);
 		msg.setRetained(true);
+		
 		ConnectionDb c= new ConnectionDb();
 		Connection connection = c.getConnection();
 		RethinkDB r =c.getR();
@@ -48,8 +49,8 @@ public class NotificationMqtt {
     	msg.setPayload(listmsg.get(i).getText().getBytes());
     	publisher.publish("notification",msg);	
     }
-	
+	*/
 }
 
 
-}
+//}

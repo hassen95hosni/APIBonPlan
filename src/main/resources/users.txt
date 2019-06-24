@@ -1,0 +1,47 @@
+redhat :
+	users :
+		services -> 1 to 999 uid 
+		people -> 	bin/bash => users wh login 
+					sbin/nologing => users whth no login in
+users are stored in etc/passwd and etc/shadow
+add user : useradd foulen 
+useradd : -s change the shell 
+			-u change the uid 
+			-c comment 
+home directory : fedault /home/foulen 
+
+ls : all files and directories 
+ls -l : all files and dierctories and permission and time and date 
+ls -al : cached files 
+.bash_profile : used to set variables 
+/etc/skell : all files in here will be added to user home directory
+userdel : delete the user 
+							-f : force the delete even if user is logged in 
+							-r : delete the user home diretory and mail 
+							ps : always use -rf
+usermod : modify user properties : -g : main froup 
+									-G supplemenatry groups 
+									-a :append to supp group without deleting the first 
+									-aG : use together to to supp group 
+
+grep something : will return any line that contain something 
+
+
+configuartion files of users : 
+			/etc/default/useradd  : where some default values of useradd are stored 
+			/etc/login.defs : where some default values of useradd are stored but . if conflecting login.defs wins 
+			/etc/skell/ : all files in here will be added to user home directory $home
+			/etc/passwd : main configuration files ofr users 
+			/etc/shadow : password managment : encypted password + all config of password
+			/etc/group 
+			
+man 5 shadow to see what the fields mean 
+id foulen : see the uid of the user foulen 
+
+
+
+
+
+
+
+		

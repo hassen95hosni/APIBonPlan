@@ -1,0 +1,6 @@
+redhat :
+	groupes :
+		groupadd : add a group : -g to set the group id 
+		all groupes are stored in : /etc/group
+		groupmod : change proporties of a group 
+		vigr is a text editor for groups witha temporay file that will be merged with /etc/group

@@ -82,7 +82,7 @@ public class MessagingWebSocket {
 	String publisherId = UUID.randomUUID().toString();
 	IMqttClient publisher;
 	
-	
+/*	
 	@Scheduled(fixedRate = 10000)
 		public void ma() throws MqttException {
 		publisher = new MqttClient("tcp://localhost:1883/message",publisherId);
@@ -104,8 +104,8 @@ public class MessagingWebSocket {
     	msg.setPayload(listmsg.get(i).getText().getBytes());
     	publisher.publish("message",msg);	
     }
-	
-}
+	*/
+//}
 
 	
 	

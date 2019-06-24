@@ -11,6 +11,6 @@ import bon.plan.entities.Produit;
 
 public interface PlanView extends JpaRepository<Plan, Long> {
 
-	@Query("SELECT p FROM Plan p WHERE p.category_id like :x ")
+	@Query("SELECT p FROM Plan p WHERE p.id like :x ")
 	public List<Plan> getbycatg(@Param("x")Long categoryId );
 }
